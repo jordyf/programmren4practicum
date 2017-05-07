@@ -16,22 +16,7 @@ router.get('/info', function(request, response) {
     });
 });
 
-router.get('/recipes/:number', function(request, response) {
-    response.status(200);
 
-    var number = request.params.number || '';
-    console.log("number= " + number);
-
-    if (number != ''){
-        var recipe = jsonrecipes[number];
-        response.json(recipe);
-    }
-
-    else{
-        recipe = jsonrecipes;
-    }
-
-});
 
 router.get('/recipes', function(request, response) {
     response.status(200);
@@ -51,6 +36,23 @@ router.get('/recipes', function(request, response) {
 
     console.log(recipe);
     response.json(recipe);
+
+});
+
+router.get('/recipes/:number', function(request, response) {
+    response.status(200);
+
+    var number = request.params.number || '';
+    console.log("number= " + number);
+
+    if (number != ''){
+        var recipe = jsonrecipes[number];
+        response.json(recipe);
+    }
+
+    else{
+        recipe = jsonrecipes;
+    }
 
 });
 

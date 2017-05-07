@@ -22,5 +22,7 @@ app.get('/', function(request, response) {
 })
 
 app.listen(port, function() {
-    console.log('Server app is listening on port ' + port);
+    console.log('Server app is listening on http://localhost:' + port + "/");
 })
+
+module.exports = app;
