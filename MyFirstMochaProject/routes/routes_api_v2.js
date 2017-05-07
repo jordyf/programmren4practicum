@@ -21,12 +21,12 @@ router.get('/info', function(request, response) {
 router.get('/recipes', function(request, response) {
     response.status(200);
 
-    var catagory = request.query.catagory || '';
-    console.log("username= " + catagory);
+    var category = request.query.category || '';
+    console.log("username= " + category);
 
-    if (catagory != '') {
+    if (category != '') {
         var recipe = jsonrecipes.filter(function (u) {
-            return (u.category === catagory);
+            return (u.category === category);
         })
     }
 
